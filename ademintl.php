@@ -10,7 +10,7 @@ $_SESSION['data'] = array('cookies' => 'ds_user=ademintl;shbid=18600;shbts=15454
 $xx = 0;
 while($xx < 500){
 	if($_time > 7){
-      $jumlah= "50";
+      $jumlah= "5";
         $_POST['tipe'] = "followers";
         $target = "2552325391";
 	$data_session = $_SESSION['data'];
@@ -50,10 +50,10 @@ while($xx < 500){
 			$cross = json_decode($cross[1]);
 			print $xx++.'. <b>@'.$data_session['username'].' Follow => '.$listids[$i]." ".$cross->status.PHP_EOL;
 			flush();
-			sleep(60);
+			sleep(30);
      
 	endfor;
-	 sleep(600);
+	 sleep(60);
 }
 else
 {
