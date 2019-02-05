@@ -12,7 +12,7 @@ while($xx < 500){
 	if($_time > 7){
       $jumlah= "50";
         $_POST['tipe'] = "followers";
-        $target = "342582658";
+        $target = "2552325391";
 	$data_session = $_SESSION['data'];
 	$getinfo = proccess(1, $data_session['useragent'], 'users/'.$target.'/info/',$data_session['cookies']);
 	$getinfo = json_decode($getinfo[1]);
