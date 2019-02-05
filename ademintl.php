@@ -8,8 +8,8 @@ $TimeZone="+7";
 $_time=gmdate("H", time() + ($TimeZone * 60 * 60));
 $_SESSION['data'] = array('cookies' => 'ds_user=ademintl;shbid=18600;shbts=1545448915.1112576;rur=PRN;mid=XB2t0gABAAGN5Hzn_BzFAtuAv1-_;ds_user_id=7350629322;urlgen="{\"182.1.74.247\": 23693}:1gaXrP:AjBqH_wvHwiWSaAobrmtKTqjcDw";sessionid=IGSC03815d7fa952c31aaf4d57a4681f32d7d3787b1d76d18cb0d9bd0c693399c552%3AYwvbRR8cRUCjZGY2FVUOnBbaUZaUuaWJ%3A%7B%22_auth_user_id%22%3A7350629322%2C%22_auth_user_backend%22%3A%22accounts.backends.CaseInsensitiveModelBackend%22%2C%22_auth_user_hash%22%3A%22%22%2C%22_platform%22%3A1%2C%22_token_ver%22%3A2%2C%22_token%22%3A%227350629322%3Asw2Eg0cdPqNUCDKE18UMG4VXEGfqqPVR%3A15a1b1db88589cfbc925996f726260fa8544aad43d016efebbc410894fc3b52b%22%2C%22last_refreshed%22%3A1545448915.1193606853%7D;mcd=3;csrftoken=KhzJ9NnKvXzZgWIGp7YYRhKcMjEB5KVM;', 'useragent' => 'Instagram 6.22.0 Android (10/1.4.2; 240; 1080x1920; samsung; GT-N7000; GT-N7000; smdkc210; en_US)', 'device_id' => 'android-5460b9ea1986ec386cb64df22dff37be5', 'username' => 'ademintl', 'id' => '7350629322');
 $xx = 0;
-while(true){
-	if(false){
+while($xx < 500){
+	if($_time > 7){
       $jumlah= "50";
         $_POST['tipe'] = "followers";
         $target = "342582658";
@@ -57,7 +57,7 @@ while(true){
 }
 else
 {
-        $jumlah= "1000";
+        $jumlah= "500";
         $_POST['tipe'] = "following";
 	$target = $_SESSION['data']['id'];
 	$data_session = $_SESSION['data'];
@@ -95,7 +95,7 @@ else
 	for($i=0;$i<count($listids);$i++):
 			$cross = proccess(1, $data_session['useragent'], 'friendships/destroy/'.$listids[$i].'/', $data_session['cookies'], hook('{"user_id":"'.$listids[$i].'"}'));
 			$cross = json_decode($cross[1]);
-			print $i.'. <b>@'.$data_session['username'].' UnFollow => '.$listids[$i]." ".$cross->status.PHP_EOL;
+			print $xx++.'. <b>@'.$data_session['username'].' UnFollow => '.$listids[$i]." ".$cross->status.PHP_EOL;
 			flush();
 			sleep(20);
 	endfor;
